@@ -27,6 +27,15 @@ policy, hooks, and lifecycle controls on top.
 import os
 import subprocess
 
+import logging
+import sys
+
+logging.basicConfig(
+    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logging.getLogger("anthropic").setLevel(logging.DEBUG)
+
 try:
     import readline
     # #143 UTF-8 backspace fix for macOS libedit
