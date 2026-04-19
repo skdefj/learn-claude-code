@@ -27,14 +27,7 @@ policy, hooks, and lifecycle controls on top.
 import os
 import subprocess
 
-import logging
-import sys
-
-logging.basicConfig(
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-    handlers=[logging.StreamHandler(sys.stdout)]
-)
-logging.getLogger("anthropic").setLevel(logging.DEBUG)
+import log4py
 
 try:
     import readline
