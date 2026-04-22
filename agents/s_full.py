@@ -49,6 +49,8 @@ from queue import Queue
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
+import log4py
+
 load_dotenv(override=True)
 if os.getenv("ANTHROPIC_BASE_URL"):
     os.environ.pop("ANTHROPIC_AUTH_TOKEN", None)

@@ -46,6 +46,8 @@ from pathlib import Path
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
+import log4py
+
 load_dotenv(override=True)
 if os.getenv("ANTHROPIC_BASE_URL"):
     os.environ.pop("ANTHROPIC_AUTH_TOKEN", None)
@@ -60,7 +62,7 @@ TASKS_DIR = WORKDIR / ".tasks"
 POLL_INTERVAL = 5
 IDLE_TIMEOUT = 60
 
-SYSTEM = f"You are a team lead at {WORKDIR}. Teammates are autonomous -- they find work themselves."
+SYSTEM = f"You are a team lead at {WORKDIR}. You have some tools, use them complete tasks. Teammates are autonomous -- they find work themselves."
 
 VALID_MSG_TYPES = {
     "message",
